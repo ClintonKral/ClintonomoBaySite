@@ -1,0 +1,11 @@
+#posts-sidebar {
+    background-color: red;
+    width: 35%;
+    margin: 150px 20px 20px 20px;
+    height: auto;
+    z-index: 1;
+}
+
+#posts-sidebar h2{
+    margin: 0px auto;
+}
