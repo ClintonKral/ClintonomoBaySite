@@ -15,7 +15,7 @@ const navrSlide = () => {
             }
             else{
                 link.style.animation = `navBarIn 0.5s ease forwards ${index / 7 + 0.5}s`;
-                document.getElementById('lol').style.top = "264px"
+                //document.getElementById('lol').style.top = "264px"
             }
         });
 
@@ -34,12 +34,12 @@ function navBarScroll()
     if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40)
     {
         document.getElementById('navbar').style.padding = "20px 50px";
-        document.getElementById('lol').style.top = "69px";
+        //document.getElementById('lol').style.top = "69px";
     }
     else
     {
         document.getElementById('navbar').style.padding= "40px 50px";
-        document.getElementById('lol').style.top = "89px";
+        //document.getElementById('lol').style.top = "89px";
     }
 }
 

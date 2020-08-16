@@ -19,12 +19,13 @@
 }
 
 .loading img {
-	width: 100px;
+	width: 50px;
 }
 
 .loading.hidden {
 	animation: fadeOut 1s;
 	animation-fill-mode: forwards;
+	z-index: 0;
 }
 
 @keyframes fadeOut {
@@ -34,26 +35,30 @@
 	}
 }
 
-h1 {
-	color: blue;
-	font-family: Arial;
-	font-size: 20px;
-	font-style: italic;
-	float: left;
-}
 #title{
 	order: 1;
 	padding-top:50px;
 	height: 10px;
 }
 
+#logo {
+	position: absolute;
+	justify-content: center;
+	height: 40px;
+	padding-top: 12px;
+	padding-left: 50px;
+}
+
+#logo:hover {
+	cursor: pointer;
+}
+
 #title h2
 {
 	position: relative;
-	
 	font-family: tropical;
 	letter-spacing: 4px;
-	font-size: 70px;
+	font-size: 60px;
 	padding-top: 150px;
 	padding: 4% 0px 0px 41.5%;
 	color:#53cfb8;
@@ -62,7 +67,6 @@ h1 {
 @media screen and (max-width: 1900px)
 {
 	#title h2{
-		font-size: 70px;
 		padding-top: 75px;
 	}
 }
@@ -81,24 +85,28 @@ li {
 
 li a {
 	display: block;
-	padding: 10px 20px;
+	cursor: pointer;
+	padding: 15px 20px;
+	font-family: tropical;
 	text-align: center;
 	color: rgb(255, 102, 102);
 	text-decoration: none;
-	font-size: 20px;
+	font-size: 30px;
 	letter-spacing: 1px;
 	transition: 0.3s;
+	transition: all .2s ease-in-out
 }
 
 li a:hover {
-	background-color: #265364;
-	color: rgb(227, 235, 238);
+	color: rgb(231, 72, 44);
 	opacity: 0.9;
+	cursor: pointer;
+	transform: scale(1.1);
+	text-shadow: 1px 1px 2px black, 0 0 1em rgb(235, 78, 67), 0 0 0.2em rgb(255, 0, 0);
 }
 
 li a.active {
-	background-color: #00638a;
-	color: rgb(227, 235, 238);
+	color: rgb(236, 41, 27);
 	font-weight: bold;
 }
 
@@ -107,15 +115,21 @@ li a.active {
 	overflow: hidden;
 }
 
-.drop .donate {
-	font-size: 20px;  
+.drop li {
+	transition: all .2s ease-in-out;
+	font-family: tropical;
+}
+
+.drop .donate { 
+	font-size: 30px;
 	border: none;
 	outline: none;
 	color: rgb(255, 102, 102);
-	padding: 10px 16px;
+	padding: 8px 16px;
 	background-color: inherit;
 	font-family: inherit;
 	margin: 0;
+	transition: all .2s ease-in-out
   }
 
 .donate-links {
@@ -124,26 +138,29 @@ li a.active {
 	top: 89px;
 	width: 114.56px;
 	height: 43px;
-	background-color: rgb(218, 213, 198);
+	cursor: pointer;
 	z-index: 5;
 }
 
 .donate-links a {
-	font-size: 20px;
+	font-family: tropical;
+	font-size: 30px;
 	color: rgb(255, 102, 102);
 	float: none;
-	padding: 10px 20px;
+	padding: 15px 20px;
 	text-decoration: none;
 	display: block;
 	text-align: left;
+	transition: all .2s ease-in-out
 }
 
 .donate-links a:hover {
-	background-color: #265364;
+	text-shadow: 1px 1px 2px black, 0 0 1em rgb(235, 78, 67), 0 0 0.2em rgb(255, 0, 0);
+	transform: scale(1.1);
 }
 
 .donate:hover {
-	background-color: orange;
+	transform: scale(1.1);
 }
 
 .drop:hover .donate-links {
@@ -174,7 +191,7 @@ li a.active {
 	position: relative;
 	display: none;
 	margin-left: 80%;
-	margin-top: 15px;
+	margin-top: 10px;
 	cursor: pointer;
 }
 
@@ -187,7 +204,7 @@ li a.active {
 	transition: all 0.3s ease;
 }
 
-@media screen and (max-width: 1000px)
+@media screen and (max-width: 1260px)
 {
 	body{
 		overflow-x: hidden;
@@ -212,13 +229,22 @@ li a.active {
 
 	.smush{
 		display: block;
+		padding-bottom: 15px;
+		margin-top: 30px;
 	}
 
-	#footer{
-		padding-right: 30%;
-		padding-left: 0%;
+	#title h2{
+		font-size: 50px;
 	}
 
+}
+
+@media screen and (max-width: 625px)
+{
+	#logo {
+		right: 250px;
+		top: 25%;
+	}
 }
 
 .navbar-r-active{
@@ -247,28 +273,39 @@ li a.active {
 	transform: rotate(45deg) translate(-5px, -6px);
 }
 
+.page
+{
+	margin: auto;
+	width: 90%;
+	height: 100%;
+	background-color: rgba(176, 248, 253, 0.3);
+	left: 10%;
+	justify-content: center;
+}
+
 .vidslider
 {
-	width: 52.1%;
+	width: 60%;
 	border: 5px solid lightblue;
 	border-radius: 0.1%;
 	margin: auto;
 	position: relative;
-	top: 200px;
-	height: 615px;
+	top: 175px;
+	height: 700px;
 	overflow: hidden;
 }
 
 .videos-display{
-	position: absolute;
+	position: relative;
 	display: flex;
+	overflow: hidden;
 	width: 100%;
 	height: 650px;
 	padding-bottom: calc(var(--aspect-ratio, .5625) * 100%);
 }
 
 .videos-display .video{
-	position: relative;
+	position: absolute;
 	width: 100%;
 	height: 100%;
 	display: none;
@@ -277,7 +314,7 @@ li a.active {
 
 .videos-display .video.active{
 	display: flex;
-	position: relative;
+	position: absolute;
 	width: 100%;
 	height: 100%;
 }
@@ -285,7 +322,7 @@ li a.active {
 .dots
 {
 	position: absolute;
-	top:88%;
+	top:92%;
 	left: 48%;
 	z-index: 2;
 	width: 10%;
@@ -393,42 +430,96 @@ body
 	min-height: 100%;
 }
 
-.about {
-	margin-left: 2%;
+.video-gallery {
+	position: relative;
 	margin-top: 15%;
-	padding-top: 1px;
 	padding-bottom: 25px;
-	width: 95%;
-	height: 30%;
-	background-color: red;
+	width: 100%;
+	height: auto;
+	background: url("reviewbg.png") no-repeat center;
+	background-size: cover;
+	background-attachment: fixed;
 }
 
-.about h1{
+.video-gallery h1{
 	font-family: tropical;
 	letter-spacing: 4px;
-	padding-left: 50px;
-	padding-bottom: 25px;
+	padding-top: 2%;
+	text-align: center;
 	font-size: 40px;
-	color:#53cfb8;
+	color:#a7e7dc;
 }
 
-.about p{
-	padding-top: 50px;
-}
-
-#footer {
-	background-color: aliceblue;
-	position: relative;
-	height: 100px;
-	margin-top: -100px;
-	clear: both;
-}
-
-#footer img {
-	left: 32%;
-	max-width: 100px;
+.wrapper {
 	width: 100%;
+	margin: auto;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	grid-row-gap: 20px;
+}
+
+.video-gallery-holder{
+	justify-content: center;
+	margin: auto;
 	position: relative;
-	padding-left: 5%;
-	display: inline-block;
+	width: 400px;
+	height: 200px;
+	padding-bottom: 20.25%; 
+}
+
+.video-gallery-holder iframe{
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.socials {
+	position: relative;
+	width: 100%;
+	padding-top:35px;
+	height: auto;
+	text-align: center;
+	background: url("socialsbg.png") no-repeat center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.socials #text {
+	width: 100%;
+	height: 50px;
+	margin:auto;
+	float: none;
+	padding-bottom: 30px;
+}
+
+.socials #text h1 {
+	text-align: center;
+	font-size: 40px;
+	font-family: tropical;
+	color: rgb(241, 205, 97);
+}
+
+.social-media-wrapper {
+	display: grid;
+	margin: auto;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	grid-row-gap: 10px;
+	padding-bottom: 50px;
+	transition: all 2s ease-in-out;
+}
+
+.social-media-wrapper img {
+	width: 200px;
+	height: 200px;
+}
+
+.social-media-wrapper a {
+	cursor: pointer;
+}
+
+.social-media-wrapper img:hover {
+	transition: all 0.5s ease-in-out;
+	transform: scale(1.1);
 }
